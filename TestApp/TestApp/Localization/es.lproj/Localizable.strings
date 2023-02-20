@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  TestApp
+
+  Created by Andres Rodriguez on 20/02/23.
+  
+*/
+
+"min" = "min";
+"Deposit" = "Depósito";
+"List of Bookings" = "Lista de reservas";
+"Select a Booking" = "Seleccione una reserva";
+"Duration" = "Duración";
+"Loading..." = "Cargando...";
+"Error" = "Error";
+"Retry" = "Reintentar";
+"OK" = "OK";
+"Start" = "Empezar";
+"The response is not valid, please try again later." = "La respuesta no es válida, inténtalo de nuevo más tarde.";
+"The request could not be performed, please try again later." = "No se pudo realizar la solicitud, inténtalo de nuevo más tarde.";
