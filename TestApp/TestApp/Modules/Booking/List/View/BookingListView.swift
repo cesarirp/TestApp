@@ -17,13 +17,30 @@ struct BookingListView: LoaderPresentable {
                 NavigationLink {
                     detail(with: booking)
                 } label: {
+                    
+#if targetEnvironment(macCatalyst)
                     BookingRowView(booking: booking)
+                        .padding(EdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0))
+#else
+                    BookingRowView(booking: booking)
+#endif
                 }
             }
             .refreshable {
                 viewModel.send(action: .loadList)
             }
             .navigationTitle(BookingStrings.listOfBookings.localized)
+            .toolbar {
+#if targetEnvironment(macCatalyst)
+                Button(action: {
+                    viewModel.send(action: .loadList)
+                }) {
+                    HStack {
+                        Image(systemName: "arrow.2.circlepath")
+                    }.padding(10.0)
+                }
+#endif
+            }
         } detail: {
             if let booking = viewModel.state.selectedBooking {
                 detail(with: booking)
